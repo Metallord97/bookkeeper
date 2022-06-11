@@ -71,6 +71,7 @@
     <module>tests</module>
     <module>native-io</module>
     <module>testtools</module>
+    <module>test-coverage</module>
   </modules>
   <mailingLists>
     <mailingList>
@@ -105,8 +106,12 @@
     </developer>
   </developers>
   <properties>
+    <!-- SonarCloud addition !-->
     <sonar.organization>metallord97</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
+    <aggregate.report.dir>test-coverage/target/site/jacoco-aggregate/jacoco.xml</aggregate.report.dir>
+
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <javac.target>1.8</javac.target>
@@ -902,6 +907,18 @@
             <compilerArg>-Xpkginfo:always</compilerArg>
 	      </compilerArgs>
         </configuration>
+      </plugin>
+      <!-- Jacoco added !-->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

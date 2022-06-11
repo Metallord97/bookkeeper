@@ -22,6 +22,11 @@
     <groupId>org.apache.bookkeeper</groupId>
     <version>4.16.0-SNAPSHOT</version>
   </parent>
+
+  <properties>
+    <sonar.coverage.jacoco.xmlReportPaths>${basedir}/../${aggregate.report.dir}</sonar.coverage.jacoco.xmlReportPaths>
+  </properties>
+
   <artifactId>bookkeeper-server</artifactId>
   <name>Apache BookKeeper :: Server</name>
   <dependencies>
